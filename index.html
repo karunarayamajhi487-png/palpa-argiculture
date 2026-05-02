@@ -2,138 +2,167 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Crafty Haven Shop</title>
+    <title>SteelBuild Construction</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
-            background-color: #fdf6f0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
         }
 
         header {
-            background-color: #d96c75;
+            background: #2c3e50;
             color: white;
             padding: 20px;
             text-align: center;
         }
 
         nav {
-            background-color: #f4a6ae;
+            background: #34495e;
             padding: 10px;
             text-align: center;
         }
 
         nav a {
+            color: white;
             margin: 0 15px;
             text-decoration: none;
-            color: white;
             font-weight: bold;
         }
 
         .hero {
+            background: url('https://via.placeholder.com/1200x400') no-repeat center/cover;
+            color: white;
             text-align: center;
-            padding: 40px;
-            background-color: #ffe3e6;
+            padding: 80px 20px;
         }
 
-        .products {
+        .hero h1 {
+            font-size: 40px;
+        }
+
+        section {
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .services, .projects {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            padding: 20px;
         }
 
-        .product {
+        .card {
             background: white;
             margin: 15px;
-            padding: 15px;
-            border-radius: 10px;
-            width: 200px;
+            padding: 20px;
+            width: 250px;
+            border-radius: 8px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            text-align: center;
         }
 
-        .product img {
+        .card img {
             width: 100%;
-            border-radius: 10px;
-        }
-
-        .product h3 {
-            margin: 10px 0 5px;
-        }
-
-        .product p {
-            color: #555;
-        }
-
-        .product button {
-            background-color: #d96c75;
-            color: white;
-            border: none;
-            padding: 10px;
             border-radius: 5px;
-            cursor: pointer;
         }
 
         footer {
+            background: #2c3e50;
+            color: white;
             text-align: center;
             padding: 15px;
-            background-color: #d96c75;
+        }
+
+        .contact p {
+            margin: 5px 0;
+        }
+
+        button {
+            background: #e67e22;
+            border: none;
+            padding: 10px 15px;
             color: white;
-            margin-top: 20px;
+            cursor: pointer;
+            border-radius: 5px;
         }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>Crafty Haven</h1>
-    <p>Handmade Crafts & Creative Goods</p>
+    <h1>SteelBuild Construction</h1>
+    <p>Steel Structure Fabrication & Construction Experts</p>
 </header>
 
 <nav>
     <a href="#">Home</a>
-    <a href="#">Shop</a>
-    <a href="#">Contact</a>
+    <a href="#services">Services</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
 </nav>
 
 <section class="hero">
-    <h2>Welcome to Our Craft Shop</h2>
-    <p>Discover unique handmade items made with love.</p>
+    <h1>Strong Steel. Reliable Structures.</h1>
+    <p>We design, fabricate, and build durable steel structures.</p>
+    <button>Get a Quote</button>
 </section>
 
-<section class="products">
-    <div class="product">
-        <img src="https://via.placeholder.com/200" alt="Handmade Candle">
-        <h3>Handmade Candle</h3>
-        <p>$10</p>
-        <button>Buy Now</button>
-    </div>
+<section id="services">
+    <h2>Our Services</h2>
+    <div class="services">
+        <div class="card">
+            <img src="https://via.placeholder.com/250" alt="">
+            <h3>Steel Fabrication</h3>
+            <p>Custom steel fabrication for industrial and commercial projects.</p>
+        </div>
 
-    <div class="product">
-        <img src="https://via.placeholder.com/200" alt="Knitted Scarf">
-        <h3>Knitted Scarf</h3>
-        <p>$15</p>
-        <button>Buy Now</button>
-    </div>
+        <div class="card">
+            <img src="https://via.placeholder.com/250" alt="">
+            <h3>Warehouse Construction</h3>
+            <p>Strong and efficient warehouse structures built to last.</p>
+        </div>
 
-    <div class="product">
-        <img src="https://via.placeholder.com/200" alt="Decor Vase">
-        <h3>Decor Vase</h3>
-        <p>$20</p>
-        <button>Buy Now</button>
+        <div class="card">
+            <img src="https://via.placeholder.com/250" alt="">
+            <h3>Structural Design</h3>
+            <p>Engineering and design solutions for safe construction.</p>
+        </div>
     </div>
+</section>
 
-    <div class="product">
-        <img src="https://via.placeholder.com/200" alt="Art Painting">
-        <h3>Art Painting</h3>
-        <p>$25</p>
-        <button>Buy Now</button>
+<section id="projects">
+    <h2>Our Projects</h2>
+    <div class="projects">
+        <div class="card">
+            <img src="https://via.placeholder.com/250" alt="">
+            <h3>Factory Building</h3>
+            <p>Industrial steel structure project completed in 2025.</p>
+        </div>
+
+        <div class="card">
+            <img src="https://via.placeholder.com/250" alt="">
+            <h3>Bridge Framework</h3>
+            <p>High-strength steel bridge framework construction.</p>
+        </div>
+
+        <div class="card">
+            <img src="https://via.placeholder.com/250" alt="">
+            <h3>Commercial Shed</h3>
+            <p>Durable and cost-effective commercial steel shed.</p>
+        </div>
     </div>
+</section>
+
+<section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <p>📍 Location: Your City, Country</p>
+    <p>📞 Phone: +123 456 7890</p>
+    <p>📧 Email: info@steelbuild.com</p>
 </section>
 
 <footer>
-    <p>© 2026 Crafty Haven | All Rights Reserved</p>
+    <p>© 2026 SteelBuild Construction | All Rights Reserved</p>
 </footer>
 
 </body>
