@@ -3,403 +3,490 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IRON & EDGE | Premium Steel Solutions</title>
-    <!-- Google Fonts: Syne for Brand, Inter for Body -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Syne:wght@700;800&display=swap" rel="stylesheet">
-    <!-- Font Awesome for Industrial Icons -->
+    <title>VERDANT | Ultra-Fresh Agricultural Identity</title>
+    
+    <!-- Fonts: Playfair Display for Elegance, Jost for Youthful Modernity -->
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         /* 
         ========================================
-        DESIGN SYSTEM & VARIABLES
+        ROOT DESIGN SYSTEM
         ========================================
         */
         :root {
-            --primary: #0057FF; /* Electric Blue - Youthful Energy */
-            --secondary: #1A1A1B; /* Deep Charcoal - Steel Base */
-            --accent: #E0E0E0;
-            --text-light: #F5F5F7;
-            --text-dark: #2C2C2E;
-            --transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-            --glass: rgba(255, 255, 255, 0.03);
-            --border-white: rgba(255, 255, 255, 0.1);
+            --primary-dark: #1B3022;   /* Deep Forest Green */
+            --primary-accent: #87A330; /* Fresh Harvest Lime */
+            --soft-cream: #FAF9F6;     /* Elegant Paper White */
+            --earthy-brown: #3E2F28;
+            --transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            --shadow: 0 20px 40px rgba(0,0,0,0.05);
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            outline: none;
         }
 
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--secondary);
-            color: var(--text-light);
-            line-height: 1.6;
+            font-family: 'Jost', sans-serif;
+            background-color: var(--soft-cream);
+            color: var(--primary-dark);
             overflow-x: hidden;
+            scroll-behavior: smooth;
         }
 
         /* 
         ========================================
-        NAVIGATION
+        NAVIGATION (Glassmorphism)
         ========================================
         */
         nav {
             position: fixed;
             top: 0;
             width: 100%;
-            padding: 25px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 20px 5%;
             z-index: 1000;
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--border-white);
+            background: rgba(250, 249, 246, 0.8);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(27, 48, 34, 0.05);
         }
 
         .logo {
-            font-family: 'Syne', sans-serif;
+            font-family: 'Playfair Display', serif;
             font-size: 1.8rem;
+            font-weight: 700;
             letter-spacing: -1px;
-            text-transform: uppercase;
         }
 
-        .logo span { color: var(--primary); }
+        .logo span { color: var(--primary-accent); }
 
         .nav-links {
             display: flex;
-            gap: 40px;
+            gap: 35px;
             list-style: none;
         }
 
         .nav-links a {
             text-decoration: none;
-            color: var(--text-light);
+            color: var(--primary-dark);
             font-weight: 400;
-            font-size: 0.9rem;
             text-transform: uppercase;
+            font-size: 0.8rem;
             letter-spacing: 2px;
             transition: var(--transition);
         }
 
-        .nav-links a:hover { color: var(--primary); }
+        .nav-links a:hover { color: var(--primary-accent); }
 
         /* 
         ========================================
-        HERO SECTION
+        HERO: THE HARVEST STATEMENT
         ========================================
         */
         .hero {
             height: 100vh;
-            display: flex;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
             align-items: center;
-            justify-content: center;
-            text-align: center;
-            background: linear-gradient(rgba(26,26,27,0.8), rgba(26,26,27,0.8)), 
-                        url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80&w=2070');
-            background-size: cover;
-            background-attachment: fixed;
-            padding: 0 10%;
+            background: #f0f2ee;
         }
 
-        .hero-content h1 {
-            font-family: 'Syne', sans-serif;
-            font-size: clamp(3rem, 8vw, 6rem);
-            line-height: 1;
-            margin-bottom: 20px;
-            text-transform: uppercase;
+        .hero-text {
+            padding: 0 10% 0 12%;
         }
 
-        .hero-content p {
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin: 0 auto 40px;
-            color: var(--accent);
+        .hero-text h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3.5rem, 8vw, 6rem);
+            line-height: 1.1;
+            margin-bottom: 30px;
         }
 
-        .cta-btn {
-            padding: 18px 40px;
-            background: var(--primary);
-            color: white;
-            text-decoration: none;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            border-radius: 0;
-            transition: var(--transition);
-            display: inline-block;
+        .hero-text p {
+            font-size: 1.1rem;
+            max-width: 500px;
+            margin-bottom: 40px;
+            opacity: 0.8;
+            line-height: 1.8;
         }
 
-        .cta-btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 87, 255, 0.3);
-        }
-
-        /* 
-        ========================================
-        SERVICES GRID (MODULAR)
-        ========================================
-        */
-        .section-padding { padding: 120px 8%; }
-
-        .section-title {
-            font-family: 'Syne', sans-serif;
-            font-size: 3rem;
-            margin-bottom: 60px;
-            text-align: center;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-        }
-
-        .service-card {
-            background: var(--glass);
-            border: 1px solid var(--border-white);
-            padding: 50px 40px;
-            transition: var(--transition);
+        .hero-image {
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?auto=format&fit=crop&q=80&w=1000') center/cover no-repeat;
             position: relative;
-            overflow: hidden;
         }
 
-        .service-card::before {
-            content: "";
+        .hero-image::after {
+            content: "EST. 2026";
             position: absolute;
-            top: 0; left: 0; width: 4px; height: 0;
-            background: var(--primary);
-            transition: var(--transition);
-        }
-
-        .service-card:hover::before { height: 100%; }
-
-        .service-card:hover {
-            background: rgba(255, 255, 255, 0.05);
-            transform: translateY(-10px);
-        }
-
-        .service-icon {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 25px;
-        }
-
-        .service-card h3 {
-            font-family: 'Syne', sans-serif;
-            font-size: 1.5rem;
-            margin-bottom: 15px;
+            bottom: 40px;
+            right: -20px;
+            transform: rotate(-90deg);
+            font-weight: 600;
+            letter-spacing: 5px;
+            color: white;
         }
 
         /* 
         ========================================
-        GALLERY / REALISM SECTION
+        CROP SHOWCASE (The Core 5)
         ========================================
         */
-        .work-gallery {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            grid-auto-rows: 300px;
-            gap: 15px;
+        .section-header {
+            text-align: center;
+            padding: 100px 5% 60px;
         }
 
-        .gallery-item {
+        .section-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+        }
+
+        .crop-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            padding: 0 8% 100px;
+        }
+
+        .crop-card {
+            background: white;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
             position: relative;
+        }
+
+        .crop-card:hover {
+            transform: translateY(-15px);
+        }
+
+        .crop-img-wrapper {
+            height: 350px;
             overflow: hidden;
         }
 
-        .gallery-item img {
+        .crop-img-wrapper img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            filter: grayscale(100%);
             transition: var(--transition);
         }
 
-        .gallery-item:hover img {
-            filter: grayscale(0%);
+        .crop-card:hover img {
             transform: scale(1.1);
         }
 
-        .gallery-overlay {
-            position: absolute;
-            bottom: 0; left: 0; width: 100%;
-            padding: 20px;
-            background: linear-gradient(transparent, rgba(0,0,0,0.8));
-            opacity: 0;
-            transition: var(--transition);
+        .crop-info {
+            padding: 30px;
+            text-align: center;
         }
 
-        .gallery-item:hover .gallery-overlay { opacity: 1; }
+        .crop-info h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
 
-        /* Large items for visual rhythm */
-        .tall { grid-row: span 2; }
-        .wide { grid-column: span 2; }
+        .tag {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--primary-accent);
+            font-weight: 700;
+        }
 
         /* 
         ========================================
-        CONTACT & FOOTER
+        EXPERIENCE SECTION (Youthful Energy)
         ========================================
         */
-        .footer {
-            background: #000;
+        .process {
+            background: var(--primary-dark);
+            color: var(--soft-cream);
+            padding: 120px 8%;
+            display: flex;
+            align-items: center;
+            gap: 80px;
+        }
+
+        .process-visual {
+            flex: 1;
+            position: relative;
+        }
+
+        .process-visual img {
+            width: 100%;
+            border-radius: 500px 500px 0 0;
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 15px;
+        }
+
+        .process-content {
+            flex: 1;
+        }
+
+        .process-step {
+            margin-bottom: 40px;
+            display: flex;
+            gap: 20px;
+        }
+
+        .step-num {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--primary-accent);
+        }
+
+        /* 
+        ========================================
+        FOOTER
+        ========================================
+        */
+        footer {
+            background: #111e15;
             padding: 80px 8% 40px;
-            border-top: 1px solid var(--border-white);
+            color: var(--soft-cream);
         }
 
-        .footer-grid {
+        .footer-main {
             display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
-            gap: 100px;
-            margin-bottom: 60px;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 60px;
+            padding-bottom: 60px;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
         }
 
-        .footer-logo { font-family: 'Syne', sans-serif; font-size: 2rem; margin-bottom: 20px; }
-        
-        /* RESPONSIVE */
-        @media (max-width: 992px) {
-            .footer-grid { grid-template-columns: 1fr; gap: 50px; }
-            .work-gallery { grid-template-columns: repeat(2, 1fr); }
+        .footer-col h4 {
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 25px;
+            font-size: 1.2rem;
+        }
+
+        .footer-col ul {
+            list-style: none;
+            line-height: 2.2;
+        }
+
+        .footer-col a {
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        .footer-col a:hover { color: var(--primary-accent); }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .crop-grid { grid-template-columns: repeat(2, 1fr); }
+            .hero { grid-template-columns: 1fr; }
+            .hero-image { display: none; }
+            .process { flex-direction: column; }
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="logo">IRON<span>EDGE</span></div>
+        <div class="logo">VERDANT<span>.</span></div>
         <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#services">Expertise</a></li>
-            <li><a href="#work">Projects</a></li>
-            <li><a href="#contact">Consultation</a></li>
+            <li><a href="#home">Philosophy</a></li>
+            <li><a href="#produce">The Produce</a></li>
+            <li><a href="#method">Our Method</a></li>
+            <li><a href="#contact">Orders</a></li>
         </ul>
     </nav>
 
     <section class="hero" id="home">
-        <div class="hero-content">
-            <h1>Forging the <br> Future of Steel.</h1>
-            <p>Architectural precision meets industrial strength. We specialize in high-end steel structures for a modern world.</p>
-            <a href="#work" class="cta-btn">View Our Legacy</a>
+        <div class="hero-text">
+            <span class="tag">Sustainable Growth</span>
+            <h1>Farming <br><em>Reimagined.</em></h1>
+            <p>We combine youthful innovation with the elegance of nature to bring the world's freshest vegetables from our soil to your table.</p>
+            <a href="#produce" style="padding: 15px 40px; background: var(--primary-dark); color: white; text-decoration: none; text-transform: uppercase; letter-spacing: 2px; font-size: 0.7rem; font-weight: 600;">Explore Harvest</a>
         </div>
+        <div class="hero-image"></div>
     </section>
 
-    <section class="section-padding" id="services">
-        <h2 class="section-title">Our Capabilities</h2>
-        <div class="services-grid">
-            <!-- Service 1 -->
-            <div class="service-card">
-                <i class="fas fa-industry service-icon"></i>
-                <h3>Steel Structure Fabrication</h3>
-                <p>Advanced CNC cutting and precision assembly for large-scale industrial skeletons. Where physics meets art.</p>
-            </div>
-            <!-- Service 2 -->
-            <div class="service-card">
-                <i class="fas fa-tools service-icon"></i>
-                <h3>Roofing Sheet Installation</h3>
-                <p>Weather-resistant, insulated, and aesthetically sleek roofing solutions for warehouses and luxury hangars.</p>
-            </div>
-            <!-- Service 3 -->
-            <div class="service-card">
-                <i class="fas fa-door-open service-icon"></i>
-                <h3>Metal Gates & Shutters</h3>
-                <p>Automated industrial shutters and elegant custom-designed metal gates for security and brand presence.</p>
-            </div>
-            <!-- Service 4 -->
-            <div class="service-card">
-                <i class="fas fa-fire-alt service-icon"></i>
-                <h3>Welding & Assembly</h3>
-                <p>Certified TIG/MIG welding techniques ensuring structural integrity that lasts a lifetime.</p>
-            </div>
-            <!-- Service 5 -->
-            <div class="service-card">
-                <i class="fas fa-building service-icon"></i>
-                <h3>Industrial Installation</h3>
-                <p>On-site management and erection of complex metal frameworks with surgical precision.</p>
-            </div>
-            <!-- Service 6 -->
-            <div class="service-card">
-                <i class="fas fa-layer-group service-icon"></i>
-                <h3>Metal Assembly</h3>
-                <p>Detailed component assembly for specialized machinery and architectural facades.</p>
-            </div>
-        </div>
+    <section class="section-header" id="produce">
+        <span class="tag">Seasonal Selection</span>
+        <h2>Signature Harvests</h2>
     </section>
 
-    <section class="section-padding" id="work" style="background: #141415;">
-        <h2 class="section-title">The Portfolio</h2>
-        <div class="work-gallery">
-            <div class="gallery-item wide">
-                <img src="https://images.unsplash.com/photo-1516937941344-00b4e0337589?auto=format&fit=crop&q=80&w=1000" alt="Steel Fabrication">
-                <div class="gallery-overlay"><h4>Main Warehouse Shell</h4></div>
+    <div class="crop-grid">
+        <!-- Tomato Farming -->
+        <div class="crop-card">
+            <div class="crop-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1592841200221-a6898f307baa?auto=format&fit=crop&q=80&w=800" alt="Tomato Farming">
             </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=800" alt="Welding">
-                <div class="gallery-overlay"><h4>Precision Welding</h4></div>
-            </div>
-            <div class="gallery-item tall">
-                <img src="https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&q=80&w=800" alt="Roofing">
-                <div class="gallery-overlay"><h4>Roofing Systems</h4></div>
-            </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1533045768406-03f8f176664d?auto=format&fit=crop&q=80&w=800" alt="Gates">
-                <div class="gallery-overlay"><h4>Custom Gates</h4></div>
+            <div class="crop-info">
+                <span class="tag">Vine-Ripened</span>
+                <h3>Heritage Tomatoes</h3>
+                <p>Bursting with antioxidants and sun-soaked flavor.</p>
             </div>
         </div>
-    </section>
 
-    <footer class="footer" id="contact">
-        <div class="footer-grid">
-            <div>
-                <div class="footer-logo">IRON<span>EDGE</span></div>
-                <p style="color: var(--accent); margin-bottom: 30px;">Setting the standard in metalwork. From concept to erection, we provide the backbone for modern industry.</p>
-                <div style="display: flex; gap: 20px; font-size: 1.5rem;">
-                    <i class="fab fa-instagram"></i>
-                    <i class="fab fa-linkedin"></i>
-                    <i class="fab fa-twitter"></i>
+        <!-- Potato Farming -->
+        <div class="crop-card">
+            <div class="crop-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1518977676601-b53f02ac6d31?auto=format&fit=crop&q=80&w=800" alt="Potato Farming">
+            </div>
+            <div class="crop-info">
+                <span class="tag">Root Fresh</span>
+                <h3>Organic Potatoes</h3>
+                <p>Triple-washed, nutrient-dense starch for the soul.</p>
+            </div>
+        </div>
+
+        <!-- Cucumber Farming -->
+        <div class="crop-card">
+            <div class="crop-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1449300079323-02e209d9d3a6?auto=format&fit=crop&q=80&w=800" alt="Cucumber Farming">
+            </div>
+            <div class="crop-info">
+                <span class="tag">Hydro-Crisp</span>
+                <h3>Green Cucumbers</h3>
+                <p>The peak of hydration and crunchy freshness.</p>
+            </div>
+        </div>
+
+        <!-- Corn Farming -->
+        <div class="crop-card">
+            <div class="crop-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1551754655-cd27e38d2076?auto=format&fit=crop&q=80&w=800" alt="Corn Farming">
+            </div>
+            <div class="crop-info">
+                <span class="tag">Golden Grain</span>
+                <h3>Sweet Corn</h3>
+                <p>Picked at dawn to preserve natural sugars.</p>
+            </div>
+        </div>
+
+        <!-- Ladyfinger Farming -->
+        <div class="crop-card">
+            <div class="crop-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&q=80&w=800" alt="Okra Ladyfinger">
+            </div>
+            <div class="crop-info">
+                <span class="tag">Exotic Green</span>
+                <h3>Tender Ladyfinger</h3>
+                <p>Delicate texture, perfect for gourmet creations.</p>
+            </div>
+        </div>
+
+        <!-- Additional Product -->
+        <div class="crop-card">
+            <div class="crop-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1515471204579-4baed00c3168?auto=format&fit=crop&q=80&w=800" alt="General Farming">
+            </div>
+            <div class="crop-info">
+                <span class="tag">Curated Packs</span>
+                <h3>Seasonal Boxes</h3>
+                <p>A mix of our best, delivered weekly.</p>
+            </div>
+        </div>
+    </div>
+
+    <section class="process" id="method">
+        <div class="process-visual">
+            <img src="https://images.unsplash.com/photo-1461354464878-ad92f492a5a0?auto=format&fit=crop&q=80&w=1000" alt="Farming Process">
+        </div>
+        <div class="process-content">
+            <span class="tag" style="color: var(--primary-accent);">Our Philosophy</span>
+            <h2 style="font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 40px;">Elegant Systems, <br>Pure Results.</h2>
+            
+            <div class="process-step">
+                <div class="step-num">01</div>
+                <div>
+                    <h4>Precision Planting</h4>
+                    <p style="opacity: 0.7; font-size: 0.9rem;">We use soil-health sensors to ensure every seed has the perfect environment to thrive.</p>
                 </div>
             </div>
-            <div>
-                <h4 style="margin-bottom: 20px; text-transform: uppercase;">Quick Links</h4>
-                <ul style="list-style: none; line-height: 2.5;">
-                    <li>Services</li>
-                    <li>Case Studies</li>
-                    <li>Safety Standards</li>
-                    <li>Contact</li>
-                </ul>
+
+            <div class="process-step">
+                <div class="step-num">02</div>
+                <div>
+                    <h4>Eco-Harvesting</h4>
+                    <p style="opacity: 0.7; font-size: 0.9rem;">No harsh chemicals. We use biological pest control to keep our vegetables 100% realistic and organic.</p>
+                </div>
             </div>
-            <div>
-                <h4 style="margin-bottom: 20px; text-transform: uppercase;">Headquarters</h4>
-                <p style="color: var(--accent);">1230 Industrial Way<br>Steel City, SC 4509<br>contact@ironedge.com</p>
+
+            <div class="process-step">
+                <div class="step-num">03</div>
+                <div>
+                    <h4>Rapid Distribution</h4>
+                    <p style="opacity: 0.7; font-size: 0.9rem;">From the field to your kitchen in under 12 hours. That is the Verdant promise.</p>
+                </div>
             </div>
         </div>
-        <div style="text-align: center; padding-top: 40px; border-top: 1px solid var(--border-white); font-size: 0.8rem; color: #666;">
-            &copy; 2026 IRON EDGE FABRICATIONS. ALL RIGHTS RESERVED.
+    </section>
+
+    <footer>
+        <div class="footer-main">
+            <div class="footer-col">
+                <div class="logo">VERDANT<span>.</span></div>
+                <p style="margin-top: 20px; font-size: 0.8rem; opacity: 0.6; line-height: 1.8;">Cultivating the future through sustainable practices and elegant agricultural design.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Produce</h4>
+                <ul>
+                    <li><a href="#">Summer Tomatoes</a></li>
+                    <li><a href="#">Root Vegetables</a></li>
+                    <li><a href="#">Corn Varieties</a></li>
+                    <li><a href="#">Specialty Ladyfingers</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">Farm Tours</a></li>
+                    <li><a href="#">Wholesale</a></li>
+                    <li><a href="#">Logistics</a></li>
+                    <li><a href="#">Privacy</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Connect</h4>
+                <div style="display: flex; gap: 20px; font-size: 1.2rem;">
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-facebook"></i>
+                    <i class="fab fa-linkedin"></i>
+                </div>
+            </div>
+        </div>
+        <div style="text-align: center; padding-top: 40px; font-size: 0.7rem; opacity: 0.4; letter-spacing: 1px;">
+            &copy; 2026 VERDANT AGRO-BOUTIQUE. ALL RIGHTS RESERVED.
         </div>
     </footer>
 
     <script>
-        // Smooth scroll for nav links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
+        // Smooth reveal on scroll logic
+        const observerOptions = {
+            threshold: 0.1
+        };
 
-        // Simple reveal animation on scroll
-        window.addEventListener('scroll', () => {
-            const cards = document.querySelectorAll('.service-card');
-            cards.forEach(card => {
-                const cardTop = card.getBoundingClientRect().top;
-                if(cardTop < window.innerHeight - 100) {
-                    card.style.opacity = '1';
-                    card.style.transform = 'translateY(0)';
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = "1";
+                    entry.target.style.transform = "translateY(0)";
                 }
             });
+        }, observerOptions);
+
+        document.querySelectorAll('.crop-card').forEach(el => {
+            el.style.opacity = "0";
+            el.style.transform = "translateY(30px)";
+            el.style.transition = "all 0.8s ease-out";
+            observer.observe(el);
         });
     </script>
 </body>
